@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script language="Javascript">
+               	function hideA(x) {
+				   if (x.checked) {
+				     document.getElementById("A").style.display = "none";
+				     document.getElementById("B").style.display = "block";
+				   }
+				 }
+
+				 function hideB(x) {
+				   if (x.checked) {
+				     document.getElementById("B").style.display = "none";
+				     document.getElementById("A").style.display = "block";
+				   }
+				 }
+           </script>
+	<title></title>
+</head>
+<body>
+	<h3>&emsp;ADD DATA OF A PUBLICATION</h3>
+<form action = "insert_publication.php" method = "get">
+		ID 			<input type="text" name="id" placeholder="9999"> <br><br>
+		Pages			<input type="text" name="pg" placeholder="xxx-yyy"> <br><br>
+		Topic		<input type="text" name="topic" placeholder="Sentiment Analysis"> <br><br>
+		Date of Publish 	<input type="date" name="dop" > <br><br>
+		<input type="radio" onchange="hideB(this)" name="aorb" checked>Conference&emsp;
+		<input type="radio" onchange="hideA(this)" name="aorb">Journal <br>
+		<div id="A"><br>
+		Conference Name <input type="text" name="cn" placeholder="XYZ"><br><br>
+		Location <input type="text" name="loc" placeholder="New York, USA"><br><br>
+		</div>
+		<div id="B" style="display:none"><br>
+		Journal Name <input type="text" name="jn" placeholder="XYZ"><br><br>
+		Volume <input type="text" name="vol" placeholder="New York, USA"><br><br>
+		Number <input type="text" name="num" placeholder="New York, USA"><br><br>
+		</div>
+		<input type="submit" name="Submit">
+</form>
+</body>
+</html>
